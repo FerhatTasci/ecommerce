@@ -1,0 +1,33 @@
+{% extends 'base_login.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    {% if error is defined and error is not null %}
+        <div class="alert alert-danger" role="alert">
+            {{ error.messageKey|trans(error.messageData, 'security') }}
+        </div>
+    {% endif %}     
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form action="{{ path('app_login') }}" method="post" class="p-4 shadow rounded">
+                <img src="/img/logo-JS.png" height="125">
+                <h2 class="mb-4">Connexion</h2>
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">@</span>
+                <input type="text" class="form-control" name="_username" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password:</label>
+                    <input id="password" name="_password" type="password" class="form-control" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Se connecter</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

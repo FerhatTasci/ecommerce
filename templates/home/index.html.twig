@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block stylesheets %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+{% endblock %}
+
+
+{% block content %}
+
+<section class="" id="product-list">
+    <div class="container-fluid p-0">
+        <img src="/img/back.png" class="img-fluid" alt="Image d'introduction">
+    </div>
+
+    <div class="container">
+    <h1 style="text-align:center"> Liste des produits </h1>
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-3 mb-5">
+                <div class="card" style="width: 18rem;">
+                    <img src="/img/parf1.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Ambre Royal</h5>
+                        <p class="card-text">Pour le flacon arrondi avec sa teinte ambrée profonde et ses motifs en feuille d'or, évoquant le luxe vintage et le raffinement.</p>
+                        <a href="#" class="btn btn-primary">Voir le produit</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3 mb-5">
+                <div class="card" style="width: 18rem;">
+                    <img src="/img/parf2.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Élégance Céleste</h5>
+                        <p class="card-text">Pour le flacon tall et élancé avec son capuchon argenté, capturant l'essence de la modernité et de l'élégance intemporelle.</p>
+                        <a href="#" class="btn btn-primary">Voir le produit</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-5">
+                <div class="card" style="width: 18rem;">
+                    <img src="/img/parf3.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Nocturne Précieux</h5>
+                        <p class="card-text">Pour le flacon carré à la finition matte noire et au capuchon en forme de diamant, symbolisant un luxe audacieux et contemporain.</p>
+                        <a href="#" class="btn btn-primary">Voir le produit</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 mb-5">
+                <div class="card" style="width: 18rem;">
+                    <img src="/img/parf4.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Jardin Enchanté</h5>
+                        <p class="card-text">Ce parfum concentre l'effervescence des fruits d'été dans un éclat de fraises, cerises, et pêches.</p>
+                        <a href="#" class="btn btn-primary">Voir le produit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-white py-5" id="reassurance">
+    <div class="container">
+        <div class="row" style="text-align:center">
+            <div class="col-4 col-lg-4">
+                Paiement CB, 3x sans frais, etc.
+            </div>
+
+            <div class="col-4 col-lg-4">
+                Livraison en 24h.
+            </div>
+
+            <div class="col-4 col-lg-4">
+                Satisfait ou remboursé.
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

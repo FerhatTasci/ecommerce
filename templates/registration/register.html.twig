@@ -1,0 +1,59 @@
+{% extends 'base_login.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="p-4 shadow rounded">
+                <img src="/img/logo-JS.png" height="125">
+
+                <h1 class="mb-4">Inscription</h1>
+
+                {{ form_start(registrationForm, {'attr': {'class': 'form needs-validation', 'novalidate': ''}}) }}
+
+                {% if registrationForm.vars.errors|length > 0 %}
+                <div class="alert alert-danger">
+                    {{ form_errors(registrationForm) }}
+                </div>
+                {% endif %}
+
+                <div class="mb-3">
+                    {{ form_row(registrationForm.email, {'attr': {'class': 'form-control', 'placeholder': 'Email'}}) }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form_row(registrationForm.firstname, {'attr': {'class': 'form-control', 'placeholder': 'Prénom'}}) }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form_row(registrationForm.lastname, {'attr': {'class': 'form-control', 'placeholder': 'Nom'}}) }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form_row(registrationForm.phone, {'attr': {'class': 'form-control', 'placeholder': 'Téléphone'}}) }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form_row(registrationForm.plainPassword, {
+                        'label': 'Password',
+                        'attr': {'class': 'form-control', 'placeholder': 'Mot de passe'}
+                    }) }}
+                </div>
+
+                <div class="mb-3 form-check">
+                    {{ form_row(registrationForm.agreeTerms, {'attr': {'class': 'form-check-input'}}) }}
+                    <label class="form-check-label" for="{{ registrationForm.agreeTerms.vars.id }}">
+                        Termes et conditions
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Inscription</button>
+
+                {{ form_end(registrationForm) }}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

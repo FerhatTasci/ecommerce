@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block stylesheets %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container mt-5 ">
+    <div class="row">
+        <div class="col-lg-4 offset-lg-2">
+            <h1 class="text-center mb-4">À propos de Jardin Secret</h1>
+            <p>Jardin Secret est une marque de parfumerie renommée, spécialisée dans la création de parfums uniques et raffinés depuis 1990.</p>
+            <p>Nos parfums sont fabriqués à partir des meilleurs ingrédients naturels, soigneusement sélectionnés pour offrir une expérience olfactive incomparable.</p>
+            <p>Chaque parfum de Jardin Secret est une invitation à un voyage sensoriel, capturant les nuances subtiles de la nature et de l'émotion.</p>
+            <p>Rejoignez-nous dans notre exploration continue du monde de la parfumerie et découvrez nos collections exclusives de parfums exquis.</p>
+        </div>
+        <div class="col-lg-4" style="padding-bottom: 3em;">
+            <img src="/img/back2.png" height="500" alt="Jardin secret"/>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Compte{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <h1 class="text-center mb-4" style="text-align: center">Mes Informations</h1>
+            <div class="card">
+                <div class="card-body">
+                    <h5>Identité : {{ app.user.lastname }} {{ app.user.firstname }}</h5>
+                    <li>Email : {{ app.user.email }}</li>
+                    <li>Téléphone : {{ app.user.phone }}</li>
+                    <!-- Ajoutez d'autres informations sur l'utilisateur ici -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

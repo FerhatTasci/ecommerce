@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}e-commerce{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        
+        <!-- Styles généraux -->
+        {{ encore_entry_link_tags('front') }}
+
+        <!-- Scripts généraux -->
+        {{ encore_entry_script_tags('app') }}
+
+        <!-- Styles supplémentaires / optionnels -->
+        {% block stylesheets %}    
+        {% endblock %}
+
+        <!-- Scripts supplémentaires / optionnels -->
+        {% block javascripts %}
+        {% endblock %}
+    </head>
+    <body>
+        {{ include('header.html.twig') }}
+        
+        <div class="page-content">
+            {% block content %}{% endblock %}
+        </div>
+
+        {{ include('footer.html.twig') }}
+    </body>
+</html>

@@ -1,0 +1,5 @@
+app_logout:
+    path: /logout
+# admin_dashboard:
+#     path: /admin
+#     controller: App\Controller\AdminController::index
