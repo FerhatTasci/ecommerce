@@ -13,7 +13,11 @@ Encore
     .setPublicPath('/build')
     // only needed for CDN's or subdirectory deploy
     //.setManifestKeyPrefix('build/')
-
+    .addEntry('app', './assets/js/app.js')
+    //     .addEntry('js/app', './assets/js/app.js')
+    //     .addStyleEntry('css/app')
+    //     .addStyleEntry('css/app', './assets/css/app.scss')
+    .enableSingleRuntimeChunk()
     /*
      * ENTRY CONFIG
      *
