@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cart index{% endblock %}
+
+{% block body %}
+    <h1>Cart index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Total</th>
+                <th>Save</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% if is_granted('IS_AUTHENTICATED_FULLY') and is_granted('ROLE_USER')  and carts %}
+            {% for cart in carts %}
+                <tr>
+                    <td>{{ cart.id }}</td>
+                    <td>{{ cart.total }}</td>
+                    <td>{{ cart.save ? 'Yes' : 'No' }}</td>
+                    <td>
+                        <a href="{{ path('app_cart_show', {'id': cart.id}) }}">show</a>
+                        <a href="{{ path('app_cart_edit', {'id': cart.id}) }}">edit</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        {% endif %}
+
+        {% for cart in carts %}
+            <tr>
+                <td>{{ cart.id }}</td>
+                <td>{{ cart.total }}</td>
+                <td>{{ cart.save ? 'Oui' : 'Non' }}</td>
+                <td>
+                    <a href="{{ path('app_cart_show', {'id': cart.id}) }}">show</a>
+                    <a href="{{ path('app_cart_edit', {'id': cart.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Aucun résultat</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_cart_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Product index{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <br>
+                <h3 class="text-center mb-4">Produits</h3>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prix</th>
+                        <th>Quantité en stock</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for product in products %}
+                        <tr>
+                            <td>{{ product.name }}</td>
+                            <td>{{ product.priceHT }}</td>
+                            <td>{{ product.stock }}</td>
+                            <td>
+                                <a href="{{ path('app_product_edit', {'id': product.id}) }}">Modifier</a>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="4">Aucun produit enregistré</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <a href="{{ path('app_product_new') }}" class="btn btn-primary">Ajouter un produit</a>
+            </div>
+        </div>
+    </div>
+    <br>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cart{% endblock %}
+
+{% block content %}
+<div class="container cart-show">
+    <h1>Pannier</h1>
+    <ul class="list-group">
+        {% for item in cart.cartItems %}
+            <li class="list-group-item product">
+                <div class="image">
+                    <img src="/img/logo-ecom.png" class="card-img-top" alt="...">
+                </div>
+                <div class="detail">
+                    <div class="name fw-bold">{{item.product.name}}</div>
+                    <div class="bottom justify-content-between d-flex gap-3">
+                        <div class="quantity">Quantité : {{item.quantity}}</div>
+                        <div class="price fw-bold">{{item.product.priceHt}}€</div>
+                    </div>
+                    
+                    </div>
+            </li>
+        {% endfor %}
+        <li class="list-group-item total">
+            <div>Total : {{total}}€</div>
+            {% if total > 0 %}
+                <button href="#" class="btn btn-dark">Valider le pannier</button>
+            {% endif %}
+        </li>
+    </ul>
+</div>
+{% endblock %}

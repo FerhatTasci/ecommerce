@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Product{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <a href="{{ path('app_product_index')}}">Retour</a>
+    <div class="container">
+        {% for message in app.flashes('add_product') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+        {% endfor %}
+        <div class="card card-product-show" style="width: 18rem;">
+            <img src="/img/logo-ecom.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{product.name}}</h5>
+                <p>
+                <div class="card-text">{{product.description}}</div>
+                <div class="card-text">Prix : {{product.priceHt}}€</div>
+                <div class="card-text">Stock : {{product.stock}}€</div>
+                </p>
+                <a class="btn btn-dark" href="{{ path('add_cart_product', {'id': product.id})}}">Ajouter au panier</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
